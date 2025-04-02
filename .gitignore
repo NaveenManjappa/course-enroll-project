@@ -1,0 +1,15 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/EnrollCourse.API/.vs/EnrollCourse.API
+/EnrollCourse.API/bin/Debug/net8.0
+/EnrollCourse.Data/obj/Debug/net8.0
+/EnrollCourse.Data/obj
+/EnrollCourse.API/obj
+/EnrollCourse.Core/bin/Debug/net8.0
+/EnrollCourse.Core/obj
+/EnrollCourse.Data/bin/Debug/net8.0
+/EnrollCourse.Service/bin/Debug/net8.0
+/EnrollCourse.Service/obj
