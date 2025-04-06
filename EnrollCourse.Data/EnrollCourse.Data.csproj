@@ -16,6 +16,7 @@
 	</ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\EnrollCourse.Core\EnrollCourse.Core.csproj" />
     <ProjectReference Include="..\EnrollCourse.Service\EnrollCourse.Service.csproj" />
   </ItemGroup>
 

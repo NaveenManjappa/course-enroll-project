@@ -1,5 +1,8 @@
 
 
+using EnrollCourse.Core.Entities;
+using EnrollCourse.Data;
+using Microsoft.EntityFrameworkCore;
 using System;
 
 namespace EnrollCourse.API
@@ -9,6 +12,15 @@ namespace EnrollCourse.API
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+            var configuration = builder.Configuration;
+
+            //Add DB context
+            builder.Services.AddDbContext<UaccDemoContext>(options =>
+            {
+                options.UseSqlServer(
+                    configuration.GetConnectionString("DbContext"),
+                provideroptions => provideroptions.EnableRetryOnFailure());
+            });
 
             // Add services to the container.
 
