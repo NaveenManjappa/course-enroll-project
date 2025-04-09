@@ -20,6 +20,8 @@ namespace EnrollCourse.API
                 options.UseSqlServer(
                     configuration.GetConnectionString("DbContext"),
                 provideroptions => provideroptions.EnableRetryOnFailure());
+
+                
             });
 
             // Add services to the container.

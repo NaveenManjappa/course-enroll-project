@@ -1,0 +1,32 @@
+<div class="container">
+  <h3>Write a Review</h3>
+  <form [formGroup]="reviewForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="rating" class="form-label">Rating</label>
+      <select class="form-control" id="rating" formControlName="rating">
+        <option value="">Select rating</option>
+        <option value="1">1 Star</option>
+        <option value="2">2 Stars</option>
+        <option value="3">3 Stars</option>
+        <option value="4">4 Stars</option>
+        <option value="5">5 Stars</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="comment" class="form-label">Comment</label>
+      <textarea
+        class="form-control"
+        id="comment"
+        rows="3"
+        formControlName="comment"
+      ></textarea>
+    </div>
+    <button
+      type="submit"
+      class="btn btn-primary"
+      [disabled]="!reviewForm.valid"
+    >
+      Submit Review
+    </button>
+  </form>
+</div>
