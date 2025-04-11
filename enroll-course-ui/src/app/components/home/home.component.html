@@ -1,11 +1,41 @@
-<carousel [isAnimated]="true">
-  <slide>
-    <img src="assets/skills/1.jpg" alt="first slide" style="display: block; width: 100%;">
-  </slide>
-  <slide>
-    <img src="assets/skills/2.jpg" alt="second slide" style="display: block; width: 100%;">
-  </slide>
-  <slide>
-    <img src="assets/skills/3.jpg" alt="third slide" style="display: block; width: 100%;">
-  </slide>
-</carousel>
+<div class="container home-content">
+  <div
+    class="carousel slide"
+    id="carouselExampleIndicators"
+    data-bs-ride="carousel"
+  >
+    <carousel [isAnimated]="true">
+      <slide>
+        <img
+          src="assets/skills/1.jpg"
+          alt="first slide"
+          style="display: block; width: 100%"
+        />
+      </slide>
+      <slide>
+        <img
+          src="assets/skills/2.jpg"
+          alt="second slide"
+          style="display: block; width: 100%"
+        />
+      </slide>
+      <slide>
+        <img
+          src="assets/skills/3.jpg"
+          alt="third slide"
+          style="display: block; width: 100%"
+        />
+      </slide>
+    </carousel>
+  </div>
+  <div class="trusted-section"><h3>Trusted by thousands of learners around the world</h3></div>
+  <div class="text-content">
+    <h2>All the courses you need in one place</h2>
+    <h5><small>From critical to technical skills</small></h5>
+  </div>
+  <div class="cta-container">
+    <button class="cta-btn">Explore Courses</button>
+  </div>
+  <!-- <app-category></app-category>
+  <app-plans-and-pricing></app-plans-and-pricing> -->
+</div>

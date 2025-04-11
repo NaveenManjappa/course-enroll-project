@@ -13,6 +13,7 @@ import { CourseComponent } from './components/course/course/course.component';
 import { PlansAndPricingComponent } from './components/plans-and-pricing/plans-and-pricing.component';
 
 export const routes: Routes = [
+  { path:'',redirectTo:'home',pathMatch:'full'},
   { path:'home',component:HomeComponent,data:{animation:'HomePage'}},
 
   { path:'course/enrollments',component:EnrollmentsComponent},
@@ -20,6 +21,7 @@ export const routes: Routes = [
   { path:'course/category',component:CategoryComponent},
   { path:'course/list',component:CourseListComponent},
   { path:'course/create',component:CourseComponent},
+  
 
   { path:'user/update-profile',component:UpdateProfileComponent},
   { path:'user/chat',component:ChatComponent},
