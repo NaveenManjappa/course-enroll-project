@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\EnrollCourse.Data\EnrollCourse.Data.csproj" />
+    <ProjectReference Include="..\EnrollCourse.Service\EnrollCourse.Service.csproj" />
   </ItemGroup>
 
 </Project>

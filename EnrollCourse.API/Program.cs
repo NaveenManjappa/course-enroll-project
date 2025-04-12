@@ -2,8 +2,10 @@
 
 using EnrollCourse.Core.Entities;
 using EnrollCourse.Data;
+using EnrollCourse.Service;
 using Microsoft.EntityFrameworkCore;
 using System;
+using UaccDemoContext = EnrollCourse.Data.UaccDemoContext;
 
 namespace EnrollCourse.API
 {
@@ -18,7 +20,7 @@ namespace EnrollCourse.API
             builder.Services.AddDbContext<UaccDemoContext>(options =>
             {
                 options.UseSqlServer(
-                    configuration.GetConnectionString("DbContext"),
+                configuration.GetConnectionString("DbContext"),
                 provideroptions => provideroptions.EnableRetryOnFailure());
 
                 
@@ -31,6 +33,9 @@ namespace EnrollCourse.API
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+            //Configure DI
+            builder.Services.AddScoped<ICourseCategoryRepository,CourseCategoryRepository>();
+            builder.Services.AddScoped<ICourseCategoryService, CourseCategoryService>();
            
             var app = builder.Build();
 
