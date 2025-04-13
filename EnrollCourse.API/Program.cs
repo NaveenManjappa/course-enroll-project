@@ -22,7 +22,7 @@ namespace EnrollCourse.API
                 options.UseSqlServer(
                 configuration.GetConnectionString("DbContext"),
                 provideroptions => provideroptions.EnableRetryOnFailure());
-
+                //options.EnableSensitiveDataLogging();
                 
             });
 

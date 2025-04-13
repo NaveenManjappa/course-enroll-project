@@ -1,6 +1,7 @@
 ﻿using EnrollCourse.Service;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
 
 namespace EnrollCourse.API.Controllers
 {
@@ -15,6 +16,22 @@ namespace EnrollCourse.API.Controllers
             this.courseCategoryService = courseCategoryService;
         }
 
-       
+        [HttpGet("{id}")]
+        public async Task<IActionResult> Get(int id)
+        {
+            var category = await courseCategoryService.GetByIdAsync(id);
+            if (category == null)
+            {
+                return NotFound();
+            }
+            return Ok(category);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
+        {
+            var categories = await courseCategoryService.GetCourseCategories();
+            return Ok(categories);
+        }
     }
 }

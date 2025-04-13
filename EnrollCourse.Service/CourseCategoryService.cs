@@ -15,6 +15,10 @@ namespace EnrollCourse.Service
         public async Task<CourseCategoryModel?> GetByIdAsync(int id)
         {      
             var data = await courseCategoryRepository.GetByIdAsync(id);
+            if (data == null)
+            {
+                return null;
+            }
             return new CourseCategoryModel()
             {
                 CategoryId = data.CategoryId,
