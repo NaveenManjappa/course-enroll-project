@@ -5,11 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EnrollCourse.Data
+namespace EnrollCourse.Service
 {
-    public interface ICourseRepository
+    public interface ICourseService
     {
         public Task<List<CourseModel>> GetAllCoursesAsync(int? categoryId=null);
-        public Task<CourseDetailModel> GetCourseDetailAsync(int courseId);
+        public Task<CourseDetailModel> GetCourseDetailsAsync(int courseId);
     }
 }

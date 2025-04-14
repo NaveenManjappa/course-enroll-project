@@ -58,7 +58,7 @@ namespace EnrollCourse.Data
             return course;
         }
 
-        public async Task<CourseDetailModel> GetCourseDetail(int courseId)
+        public async Task<CourseDetailModel> GetCourseDetailAsync(int courseId)
         {
             var course = await uaccDemoContext.Courses
                 .Include(c => c.Category)
