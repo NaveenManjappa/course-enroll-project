@@ -5,46 +5,14 @@
   </div>
   
   <div class="carousel-container">
-    <div class="card category-card">
+    <div class="card category-card" *ngFor="let category of categories">
       <div class="card-body">
         <h5 class="card-title">
-          <i class="bi bi-boookmark-fill me-2"></i>All Courses
+          <i class="bi bi-boookmark-fill me-2"></i>{{category.categoryName}}
         </h5>
-        <p class="card-text">Take a look at various courses available to enroll,learn and succeed in career</p>
+        <p class="card-text">{{category.description}}</p>
         <a href="" class="btn btn-primary">Explore</a>
       </div>
     </div>
-
-    <div class="card category-card">
-      <div class="card-body">
-        <h5 class="card-title">
-          <i class="bi bi-boookmark-fill me-2"></i>All Courses
-        </h5>
-        <p class="card-text">Take a look at various courses available to enroll,learn and succeed in career</p>
-        <a href="" class="btn btn-primary">Explore</a>
-      </div>
-    </div>
-
-    <div class="card category-card">
-      <div class="card-body">
-        <h5 class="card-title">
-          <i class="bi bi-boookmark-fill me-2"></i>All Courses
-        </h5>
-        <p class="card-text">Take a look at various courses available to enroll,learn and succeed in career</p>
-        <a href="" class="btn btn-primary">Explore</a>
-      </div>
-    </div>
-
-    <div class="card category-card">
-      <div class="card-body">
-        <h5 class="card-title">
-          <i class="bi bi-boookmark-fill me-2"></i>All Courses
-        </h5>
-        <p class="card-text">Take a look at various courses available to enroll,learn and succeed in career</p>
-        <a href="" class="btn btn-primary">Explore</a>
-      </div>
-    </div>
-
-
   </div>
 </div>
