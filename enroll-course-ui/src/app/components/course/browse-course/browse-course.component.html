@@ -7,33 +7,32 @@
     </p>
   </div>
 
-  <div class="no-courses-message text-center">
+  <div class="no-courses-message text-center" *ngIf="courses.length === 0">
     <h2>No courses Available!</h2>
     <p>
       No courses available currently for this category. Please check back later!
     </p>
   </div>
 
-  <div class="course-list">
+  <div class="course-list" *ngIf="courses.length > 0">
     <div class="course-card" *ngFor="let course of courses">
       <div class="course-image">
-        <img [src]="course.thumbnail"/>
+        <img [src]="course.thumbnail" />
       </div>
       <div class="course-content">
         <div class="course-header">
-          <h2>h</h2>
-          <p class="price">1</p>
+          <h2>{{ course.title }}</h2>
+          <p class="price">{{ formatPrice(course.price) }}</p>
         </div>
-        <p class="description">desc</p>
+        <p class="description">{{course.description}}</p>
         <div class="course-details">
-          <span class="duration">Duration: hours</span>
-          <span class="course-type">Type: </span>
-          <span class="seats">Seats Available: </span>
-          <span class="rating">Rating: </span>
+          <span class="duration">Duration: {{ course.duration}} hours</span>
+          <span class="course-type">Type: {{course.courseType}} </span>
+          <span class="seats">Seats Available: {{course.seatsAvailable}}</span>
+          <span class="rating">Rating: {{ course.userRating?.averageRating}} ({{course.userRating?.totalRating}} reviews) </span>
         </div>
         <a href="" class="btn btn-primary">View Details</a>
       </div>
     </div>
-
   </div>
 </div>

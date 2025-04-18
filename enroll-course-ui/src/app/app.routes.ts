@@ -11,14 +11,17 @@ import { VideoRequestFormComponent } from './components/user-ask/video-request-f
 import { CourseListComponent } from './components/course/course-list/course-list.component';
 import { CourseComponent } from './components/course/course/course.component';
 import { PlansAndPricingComponent } from './components/plans-and-pricing/plans-and-pricing.component';
+import { BrowseCourseComponent } from './components/course/browse-course/browse-course.component';
+import { CourseByCategorryComponent } from './components/course/course-by-categorry/course-by-categorry.component';
 
 export const routes: Routes = [
   { path:'',redirectTo:'home',pathMatch:'full'},
   { path:'home',component:HomeComponent,data:{animation:'HomePage'}},
 
   { path:'course/enrollments',component:EnrollmentsComponent},
-  { path:'course/browse',component:BrowseComponent},
+  { path:'course/browse',component:BrowseCourseComponent},
   { path:'course/category',component:CategoryComponent},
+  { path:'course/category/:categoryId',component:CourseByCategorryComponent},
   { path:'course/list',component:CourseListComponent},
   { path:'course/create',component:CourseComponent},
   

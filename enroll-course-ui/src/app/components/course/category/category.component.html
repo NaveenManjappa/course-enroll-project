@@ -3,15 +3,40 @@
     <h2>All the skills you need in one place!</h2>
     <h5><small>From critical skills to technical topics</small></h5>
   </div>
-  
-  <div class="carousel-container">
+  <div class="list-container" *ngIf="viewType === 'list'">
+    <div class="list-item">
+      <div class="item-info">
+        <h5>All courses</h5>
+        <p>
+          Take a look at various courses available to enroll,learn and succeed
+        </p>
+      </div>
+      <a [routerLink]="['course/browse']" class="btn btn-primary"
+        >Explore</a
+      >
+    </div>
+    <div class="list-item" *ngFor="let category of categories">
+      <div class="item-info">
+        <h5>{{ category.categoryName }}</h5>
+        <p>{{category.description}}</p>
+      </div>
+      <a [routerLink]="['course/category',category.categoryId]"class="btn btn-primary">Explore</a>
+    </div>
+  </div>
+
+  <div *ngIf="viewType === 'tabs'" class="carousel-container">
     <div class="card category-card" *ngFor="let category of categories">
       <div class="card-body">
         <h5 class="card-title">
-          <i class="bi bi-boookmark-fill me-2"></i>{{category.categoryName}}
+          <i class="bi bi-boookmark-fill me-2"></i>{{ category.categoryName }}
         </h5>
-        <p class="card-text">{{category.description}}</p>
-        <a href="" class="btn btn-primary">Explore</a>
+        <p class="card-text">{{ category.description }}</p>
+        <a
+          [routerLink]="['/course/category', category.categoryId]"
+          routerLinkActive="router-link-active"
+          class="btn btn-primary"
+          >Explore</a
+        >
       </div>
     </div>
   </div>
