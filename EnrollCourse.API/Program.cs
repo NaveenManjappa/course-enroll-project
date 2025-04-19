@@ -38,6 +38,17 @@ namespace EnrollCourse.API
             builder.Services.AddScoped<ICourseCategoryService, CourseCategoryService>();
             builder.Services.AddScoped<ICourseRepository,CourseRepository>();
             builder.Services.AddScoped<ICourseService,CourseService>();
+
+            //enable CORS
+            builder.Services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(policy =>
+                {
+                    policy.WithOrigins("http://localhost:4200")
+                    .AllowAnyHeader()
+                    .AllowAnyMethod();
+                 });
+            });
            
             var app = builder.Build();
 
@@ -47,7 +58,7 @@ namespace EnrollCourse.API
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
-
+            app.UseCors();
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
