@@ -31,7 +31,7 @@
           <span class="seats">Seats Available: {{course.seatsAvailable}}</span>
           <span class="rating">Rating: {{ course.userRating?.averageRating}} ({{course.userRating?.totalRating}} reviews) </span>
         </div>
-        <a href="" class="btn btn-primary">View Details</a>
+        <a class="btn btn-primary" [routerLink]="['/course/details',course.courseId]">View Details</a>
       </div>
     </div>
   </div>

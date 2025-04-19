@@ -14,7 +14,7 @@ export class CourseService {
   }
 
   getCourseDetails(courseId:number):Observable<CourseDetails>{
-    return this.http.get<CourseDetails>(`${this.baseUrl}/Detail/${courseId}`);
+    return this.http.get<CourseDetails>(`${this.baseUrl}/Details/${courseId}`);
   }
 
   getAllCourses():Observable<Course[]>{

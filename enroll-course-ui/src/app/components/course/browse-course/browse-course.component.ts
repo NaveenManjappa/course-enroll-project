@@ -2,11 +2,12 @@ import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/cor
 import { Course } from '../../../models/course';
 import { CommonModule } from '@angular/common';
 import { CourseService } from '../../../services/course.service';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-browse-course',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,RouterModule],
   templateUrl: './browse-course.component.html',
   styleUrl: './browse-course.component.css'
 })

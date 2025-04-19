@@ -13,6 +13,8 @@ import { CourseComponent } from './components/course/course/course.component';
 import { PlansAndPricingComponent } from './components/plans-and-pricing/plans-and-pricing.component';
 import { BrowseCourseComponent } from './components/course/browse-course/browse-course.component';
 import { CourseByCategorryComponent } from './components/course/course-by-categorry/course-by-categorry.component';
+import { CourseDetailsComponent } from './components/course/course-details/course-details.component';
+import { ViewUserProfileComponent } from './components/users/view-user-profile/view-user-profile.component';
 
 export const routes: Routes = [
   { path:'',redirectTo:'home',pathMatch:'full'},
@@ -24,10 +26,11 @@ export const routes: Routes = [
   { path:'course/category/:categoryId',component:CourseByCategorryComponent},
   { path:'course/list',component:CourseListComponent},
   { path:'course/create',component:CourseComponent},
-  
+  { path:'course/details/:courseId',component:CourseDetailsComponent},
 
   { path:'user/update-profile',component:UpdateProfileComponent},
   { path:'user/chat',component:ChatComponent},
+  { path:'user/instructors',component:ViewUserProfileComponent},
 
   { path:'technology/request/video',component:VideoRequestFormComponent},
   { path:'technology/requests',component:VideoRequestsComponent},
