@@ -11,7 +11,7 @@
           Take a look at various courses available to enroll,learn and succeed
         </p>
       </div>
-      <a [routerLink]="['course/browse']" class="btn btn-primary"
+      <a [routerLink]="['/course/browse']" class="btn btn-primary"
         >Explore</a
       >
     </div>
@@ -20,7 +20,7 @@
         <h5>{{ category.categoryName }}</h5>
         <p>{{category.description}}</p>
       </div>
-      <a [routerLink]="['course/category',category.categoryId]"class="btn btn-primary">Explore</a>
+      <a [routerLink]="['/course/category',category.categoryId]"class="btn btn-primary">Explore</a>
     </div>
   </div>
 
