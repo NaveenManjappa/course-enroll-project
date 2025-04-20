@@ -16,3 +16,4 @@
 EnrollCourse.API/.vs/ProjectEvaluation/enrollcourse.api.metadata.v9.bin
 EnrollCourse.API/.vs/ProjectEvaluation/enrollcourse.api.projects.v9.bin
 EnrollCourse.API/.vs/ProjectEvaluation/enrollcourse.api.strings.v9.bin
+/EnrollCourse.API/appsettings.Development.json
