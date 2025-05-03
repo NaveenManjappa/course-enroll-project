@@ -6,6 +6,13 @@
 trigger:
 - main
 
+resources:
+  repositories:
+    - repository: self
+      type: git
+      name: NaveenManjappa/course-enroll-project
+      endpoint: github.com_NaveenManjappa
+
 pool:
   vmImage: 'windows-latest'
 
