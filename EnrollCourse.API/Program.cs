@@ -42,12 +42,25 @@ namespace EnrollCourse.API
             //enable CORS
             builder.Services.AddCors(options =>
             {
-                options.AddDefaultPolicy(policy =>
+                //options.AddDefaultPolicy(policy =>
+                //{
+                //    policy.WithOrigins("http://localhost:4200")
+                //    .AllowAnyHeader()
+                //    .AllowAnyMethod();
+                // });
+
+                options.AddPolicy(name: "AllowSpecificOrigins", policy =>
                 {
-                    policy.WithOrigins("http://localhost:4200")
+                    policy.WithOrigins("https://learnsmartonline.azurewebsites.net")
                     .AllowAnyHeader()
                     .AllowAnyMethod();
-                 });
+                });
+
+                options.AddPolicy(name: "AllowAnyOriginDev", policy =>
+                {
+                    policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+                });
+
             });
            
             var app = builder.Build();
@@ -57,8 +70,14 @@ namespace EnrollCourse.API
             {
                 app.UseSwagger();
                 app.UseSwaggerUI();
+                app.UseCors("AllowAnyOriginDev");
+
             }
-            app.UseCors();
+            else
+            {
+                app.UseCors("AllowSpecificOrigins");
+            }
+            
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
